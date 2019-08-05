@@ -1,9 +1,32 @@
+html,
+body {
+}
 .app {
-  font-family: helvetica, arial, sans-serif;
-  padding: 2em;
-  border: 5px solid red;
+}
 
-  p {
-    background-color: yellow;
-  }
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+  overflow: hidden;
+  background-color: #f8f9f9;
+}
+
+li {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+
+li {
+  display: block;
+  color: #222;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+li a:hover {
+  background-color: #222;
 }

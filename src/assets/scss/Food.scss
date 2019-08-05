@@ -1,0 +1,128 @@
+.box {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  padding: 5px;
+  margin: 0 auto;
+  width: 60%;
+}
+
+.one {
+  height: 100px;
+  flex-basis: 20%;
+  -ms-flex: auto;
+  margin: 2px;
+  max-width: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.carousel {
+  width: 100%;
+  height: 100%;
+}
+
+.par {
+  position: absolute;
+  z-index: 9;
+  top: 28%;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  overflow: hidden;
+  border-right: 0.15em solid white;
+  white-space: nowrap;
+  margin: 0 auto;
+  animation: typing 5s steps(50, end), blink-caret 0.75s step-end infinite;
+  box-sizing: border-box;
+}
+.centering {
+  position: absolute;
+  z-index: 9;
+  top: 40%;
+  left: 48%;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+}
+@keyframes typing {
+  from {
+    width: 0%;
+  }
+  to {
+    max-width: 100%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
+}
+@media (max-width: 1666px) {
+  .one {
+    flex-basis: 15.33%;
+  }
+  .box {
+    width: 100%;
+    justify-content: center;
+  }
+}
+@media (max-width: 1466) {
+  .one {
+    flex-basis: 31.33%;
+  }
+}
+
+@media (max-width: 1333px) {
+  .one {
+    flex-basis: 31.33%;
+  }
+  .box {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1073px) {
+  .one {
+    flex-basis: 31.33%;
+  }
+  .box {
+    width: 100%;
+    justify-content: center;
+  }
+}
+@media (max-width: 926px) {
+  .one {
+    flex-basis: 31.33%;
+  }
+  .box {
+    width: 100%;
+    justify-content: center;
+  }
+}
+@media (max-width: 815px) {
+  .one {
+    flex-basis: 48%;
+  }
+  .box {
+    width: 100%;
+    justify-content: center;
+  }
+}
+@media (max-width: 555px) {
+  .one {
+    flex-basis: 48%;
+  }
+  .box {
+    width: 100%;
+    justify-content: center;
+  }
+}

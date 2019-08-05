@@ -1,5 +1,5 @@
 // shared config (dev and prod)
-const {resolve} = require('path');
+const { resolve } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -10,6 +10,11 @@ module.exports = {
   module: {
     rules: [
       {
+        exclude: [/node_modules\/(?!(swiper|dom7)\/).*/, /\.test\.js(x)?$/],
+        test: /\.js(x)?$/,
+        use: [{ loader: 'babel-loader' }],
+      },
+      {
         test: /\.(js|jsx)$/,
         use: ['babel-loader'],
         exclude: /node_modules/,
@@ -18,14 +23,22 @@ module.exports = {
         test: /\.css$/,
         use: [
           'style-loader',
-          {loader: 'css-loader', options: {importLoaders: 1}}
+          { loader: 'css-loader', options: { importLoaders: 1 } },
         ],
       },
       {
         test: /\.scss$/,
         loaders: [
           'style-loader',
-          {loader: 'css-loader', options: {importLoaders: 1}},
+          { loader: 'css-loader', options: { importLoaders: 1 } },
+          'sass-loader',
+        ],
+      },
+      {
+        test: /\.sass$/,
+        loaders: [
+          'style-loader',
+          { loader: 'css-loader', options: { importLoaders: 1 } },
           'sass-loader',
         ],
       },
@@ -38,11 +51,9 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({template: 'index.html.ejs',}),
-  ],
+  plugins: [new HtmlWebpackPlugin({ template: 'index.html.ejs' })],
   externals: {
-    'react': 'React',
+    react: 'React',
     'react-dom': 'ReactDOM',
   },
   performance: {
